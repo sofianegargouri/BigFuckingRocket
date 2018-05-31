@@ -1,14 +1,7 @@
 # frozen_string_literal: true
 
 class RocketsController < ApplicationController
-  # before_action :authenticate_user!
   load_and_authorize_resource
-
-  # GET /rockets
-  # GET /rockets.json
-  def index
-    @rockets = Rocket.all
-  end
 
   # GET /rockets/1
   # GET /rockets/1.json
@@ -31,7 +24,7 @@ class RocketsController < ApplicationController
 
     respond_to do |format|
       if @rocket.save
-        format.html { redirect_to @rocket, notice: 'Rocket was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Rocket was successfully created.' }
         format.json { render :show, status: :created, location: @rocket }
       else
         format.html { render :new }
