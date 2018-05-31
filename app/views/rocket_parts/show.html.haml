@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %strong Level up:
+  = @rocket_part.level_up
+= link_to 'Edit', edit_rocket_part_path(@rocket_part)
+|
+= link_to 'Back', rocket_parts_path

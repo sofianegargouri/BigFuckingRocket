@@ -1,0 +1,14 @@
+.sidebar {
+  .rocket-infos {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    img {
+      height: 5rem;
+      object-fit: contain;
+      width: 5rem;
+    }
+  }
+}

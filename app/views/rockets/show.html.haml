@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @rocket.name
+%p
+  %strong Image url:
+  = @rocket.image_url
+= link_to 'Edit', edit_rocket_path(@rocket)
+|
+= link_to 'Back', rockets_path

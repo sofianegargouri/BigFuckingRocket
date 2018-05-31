@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'cancancan', '~> 2.0'
 gem 'devise', git: 'https://github.com/plataformatec/devise'
+gem 'haml-rails', '~> 1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

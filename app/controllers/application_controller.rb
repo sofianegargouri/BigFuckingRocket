@@ -2,7 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :update_user_resources
-  protect_from_forgery with: :exception
+  protect_from_forgery prepend: true
 
   def update_user_resources
     current_user&.update_resources

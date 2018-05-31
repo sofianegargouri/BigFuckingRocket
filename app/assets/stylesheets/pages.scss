@@ -1,33 +1,3 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  max-width: 250px;
-
-  .ressources {
-    .ressource {
-      display:flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-
-  .parts {
-    .part {
-      margin-top: 10px;
-
-      .part-title {
-        font-size: 20px;
-      }
-
-      .part-content {
-        display:flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-    }
-  }
-}

@@ -1,0 +1,18 @@
+%p#notice= notice
+%h1 Rockets
+%table
+  %thead
+    %tr
+      %th Name
+      %th Image url
+      %th{:colspan => "3"}
+  %tbody
+    - @rockets.each do |rocket|
+      %tr
+        %td= rocket.name
+        %td= rocket.image_url
+        %td= link_to 'Show', rocket
+        %td= link_to 'Edit', edit_rocket_path(rocket)
+        %td= link_to 'Destroy', rocket, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Rocket', new_rocket_path

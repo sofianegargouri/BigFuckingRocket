@@ -1,0 +1,16 @@
+%p#notice= notice
+%h1 Rocket Parts
+%table
+  %thead
+    %tr
+      %th Level up
+      %th{:colspan => "3"}
+  %tbody
+    - @rocket_parts.each do |rocket_part|
+      %tr
+        %td= rocket_part.level_up
+        %td= link_to 'Show', rocket_part
+        %td= link_to 'Edit', edit_rocket_part_path(rocket_part)
+        %td= link_to 'Destroy', rocket_part, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Rocket Part', new_rocket_part_path
