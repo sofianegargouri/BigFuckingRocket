@@ -6,7 +6,7 @@ class Part < ApplicationRecord
   private
 
   def create_rocket_parts
-    Rocket.each do |rocket|
+    Rocket.all.each do |rocket|
       RocketPart.create(part: self, rocket: rocket, level: 1)
     end
   end

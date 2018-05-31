@@ -13,7 +13,7 @@ class User < ApplicationRecord
   private
 
   def create_resources
-    Resource.each do |res|
+    Resource.all.each do |res|
       UserResource.create(user: self, resource: res, quantity: 0)
     end
   end
