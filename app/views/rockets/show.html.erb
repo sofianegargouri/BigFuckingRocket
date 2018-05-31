@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @rocket.name %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @rocket.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_rocket_path(@rocket) %> |
+<%= link_to 'Back', rockets_path %>
