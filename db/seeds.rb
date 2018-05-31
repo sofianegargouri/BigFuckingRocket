@@ -44,4 +44,3 @@ PartCost.create!(part: part, resource: stel, cost: 10)
 PartStat.create!(part: part, stat: aero, ratio: 0)
 PartStat.create!(part: part, stat: stab, ratio: 5)
 PartStat.create!(part: part, stat: velo, ratio: 15)
-
