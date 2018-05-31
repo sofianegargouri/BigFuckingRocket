@@ -5,9 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Level</th>
-      <th>Rocket</th>
-      <th>Part</th>
+      <th>Level up</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +13,7 @@
   <tbody>
     <% @rocket_parts.each do |rocket_part| %>
       <tr>
-        <td><%= rocket_part.level %></td>
-        <td><%= rocket_part.rocket %></td>
-        <td><%= rocket_part.part %></td>
+        <td><%= rocket_part.level_up %></td>
         <td><%= link_to 'Show', rocket_part %></td>
         <td><%= link_to 'Edit', edit_rocket_part_path(rocket_part) %></td>
         <td><%= link_to 'Destroy', rocket_part, method: :delete, data: { confirm: 'Are you sure?' } %></td>
