@@ -1,0 +1,11 @@
+version: '2'
+services:
+  bigfuckingrocket-db:
+    image: postgres:latest
+    container_name: bigfuckingrocket-db
+    environment:
+      POSTGRES_DB: bigfuckingrocket_development
+      POSTGRES_USER: bigfuckingrocket
+      POSTGRES_PASSWORD:
+    ports:
+      - 6505:5432/tcp
