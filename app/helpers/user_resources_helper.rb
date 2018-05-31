@@ -1,0 +1,2 @@
+module UserResourcesHelper
+end
