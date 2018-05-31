@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @rocket_part.level %>
+</p>
+
+<p>
+  <strong>Rocket:</strong>
+  <%= @rocket_part.rocket %>
+</p>
+
+<p>
+  <strong>Part:</strong>
+  <%= @rocket_part.part %>
+</p>
+
+<%= link_to 'Edit', edit_rocket_part_path(@rocket_part) %> |
+<%= link_to 'Back', rocket_parts_path %>

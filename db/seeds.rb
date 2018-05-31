@@ -1,9 +1,46 @@
 # frozen_string_literal: true
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+user = User.create!(email: 'admin@bfr.com', password: '12345678', password_confirmation: '12345678')
+Rocket.create!(name: 'Big Fucking Rocket', user: user, image_url: 'https://media.giphy.com/media/HtaGVNHVnTNuw/giphy.gif')
+
+iron = Resource.create!(name: 'Iron', regen_time: 50)
+gaz  = Resource.create!(name: 'Gaz', regen_time: 80)
+elec = Resource.create!(name: 'Electricity', regen_time: 100)
+stel = Resource.create!(name: 'Steel', regen_time: 30)
+
+aero = Stat.create!(name: 'Aerodynamism')
+stab = Stat.create!(name: 'Stability')
+velo = Stat.create!(name: 'Velocity')
+
+part = Part.create!(name: 'Fins')
+PartCost.create!(part: part, resource: iron, cost: 0)
+PartCost.create!(part: part, resource: gaz, cost: 20)
+PartCost.create!(part: part, resource: elec, cost: 10)
+PartCost.create!(part: part, resource: stel, cost: 5)
+PartStat.create!(part: part, stat: aero, ratio: 15)
+PartStat.create!(part: part, stat: stab, ratio: 5)
+PartStat.create!(part: part, stat: velo, ratio: 5)
+part = Part.create!(name: 'Tube')
+PartCost.create!(part: part, resource: iron, cost: 10)
+PartCost.create!(part: part, resource: gaz, cost: 20)
+PartCost.create!(part: part, resource: elec, cost: 5)
+PartCost.create!(part: part, resource: stel, cost: 0)
+PartStat.create!(part: part, stat: aero, ratio: 0)
+PartStat.create!(part: part, stat: stab, ratio: 15)
+PartStat.create!(part: part, stat: velo, ratio: 0)
+part = Part.create!(name: 'Nose')
+PartCost.create!(part: part, resource: iron, cost: 0)
+PartCost.create!(part: part, resource: gaz, cost: 10)
+PartCost.create!(part: part, resource: elec, cost: 5)
+PartCost.create!(part: part, resource: stel, cost: 15)
+PartStat.create!(part: part, stat: aero, ratio: 15)
+PartStat.create!(part: part, stat: stab, ratio: 0)
+PartStat.create!(part: part, stat: velo, ratio: 10)
+part = Part.create!(name: 'Hollow Pressure Vessel')
+PartCost.create!(part: part, resource: iron, cost: 0)
+PartCost.create!(part: part, resource: gaz, cost: 30)
+PartCost.create!(part: part, resource: elec, cost: 15)
+PartCost.create!(part: part, resource: stel, cost: 10)
+PartStat.create!(part: part, stat: aero, ratio: 0)
+PartStat.create!(part: part, stat: stab, ratio: 5)
+PartStat.create!(part: part, stat: velo, ratio: 15)

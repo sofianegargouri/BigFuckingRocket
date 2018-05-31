@@ -18,6 +18,7 @@ module BigFuckingRocket
     # -- all .rb files in that directory are automatically loaded.
     config.generators do |g|
       g.orm :active_record, primary_key_type: :uuid
+      g.test_framework nil
     end
   end
 end
