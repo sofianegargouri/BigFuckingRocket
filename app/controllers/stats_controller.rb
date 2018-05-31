@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class StatsController < ApplicationController
-  before_action :set_stat, only: [:show, :edit, :update, :destroy]
+  before_action :set_stat, only: %i[show edit update destroy]
 
   # GET /stats
   # GET /stats.json
@@ -9,8 +11,7 @@ class StatsController < ApplicationController
 
   # GET /stats/1
   # GET /stats/1.json
-  def show
-  end
+  def show; end
 
   # GET /stats/new
   def new
@@ -18,8 +19,7 @@ class StatsController < ApplicationController
   end
 
   # GET /stats/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /stats
   # POST /stats.json
@@ -62,13 +62,14 @@ class StatsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_stat
-      @stat = Stat.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def stat_params
-      params.require(:stat).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_stat
+    @stat = Stat.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def stat_params
+    params.require(:stat).permit(:name)
+  end
 end

@@ -1,0 +1,32 @@
+<%= form_with(model: rocket_part, local: true) do |form| %>
+  <% if rocket_part.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rocket_part.errors.count, "error") %> prohibited this rocket_part from being saved:</h2>
+
+      <ul>
+      <% rocket_part.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.number_field :level, id: :rocket_part_level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rocket_id %>
+    <%= form.text_field :rocket_id, id: :rocket_part_rocket_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :part_id %>
+    <%= form.text_field :part_id, id: :rocket_part_part_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

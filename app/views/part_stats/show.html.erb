@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ratio:</strong>
+  <%= @part_stat.ratio %>
+</p>
+
+<p>
+  <strong>Stat:</strong>
+  <%= @part_stat.stat %>
+</p>
+
+<p>
+  <strong>Part:</strong>
+  <%= @part_stat.part %>
+</p>
+
+<%= link_to 'Edit', edit_part_stat_path(@part_stat) %> |
+<%= link_to 'Back', part_stats_path %>

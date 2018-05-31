@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UserResourcesController < ApplicationController
-  before_action :set_user_resource, only: [:show, :edit, :update, :destroy]
+  before_action :set_user_resource, only: %i[show edit update destroy]
 
   # GET /user_resources
   # GET /user_resources.json
@@ -9,8 +11,7 @@ class UserResourcesController < ApplicationController
 
   # GET /user_resources/1
   # GET /user_resources/1.json
-  def show
-  end
+  def show; end
 
   # GET /user_resources/new
   def new
@@ -18,8 +19,7 @@ class UserResourcesController < ApplicationController
   end
 
   # GET /user_resources/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /user_resources
   # POST /user_resources.json
@@ -62,13 +62,14 @@ class UserResourcesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user_resource
-      @user_resource = UserResource.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_resource_params
-      params.require(:user_resource).permit(:quantity, :user_id, :resource_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user_resource
+    @user_resource = UserResource.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_resource_params
+    params.require(:user_resource).permit(:quantity, :user_id, :resource_id)
+  end
 end
