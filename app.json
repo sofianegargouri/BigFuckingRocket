@@ -1,0 +1,32 @@
+{
+  "name": "Big Fucking Rocket",
+  "description": "BFR.",
+  "repository": "https://github.com/sofianegargouri/BigFuckingRocket",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:schema:load db:seed"
+  },
+  "env": {
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
