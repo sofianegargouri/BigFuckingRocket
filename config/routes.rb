@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'dashboard' => 'pages#dashboard'
-  patch 'rocket_parts/:id/level_up' => 'rocket_parts#level_up'
+  resources :rocket_parts, only: [] do
+    patch :level_up, on: :member
+  end
   resources :rockets, only: %i[new create]
 end

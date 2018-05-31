@@ -7,5 +7,6 @@ class RocketPartsController < ApplicationController
   # GET /rocket_parts.json
   def level_up
     @rocket_part.level_up
+    redirect_to root_path
   end
 end

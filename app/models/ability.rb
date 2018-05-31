@@ -8,5 +8,8 @@ class Ability
     can :manage, RocketPart do |rocket_part|
       rocket_part.user == user
     end
+    cannot :level_up, RocketPart do |rocket_part|
+      rocket_part.updated_at > Time.zone.now - (1.minute * rocket_part.level)
+    end
   end
 end

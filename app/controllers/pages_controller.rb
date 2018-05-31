@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   before_action :authenticate_user!
 
   def dashboard
+    @resources = Resource.all
     if current_user.rocket.nil?
       redirect_to new_rocket_path
     else
