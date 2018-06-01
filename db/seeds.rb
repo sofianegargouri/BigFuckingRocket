@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-user = User.create!(email: 'admin@bfr.com', password: '12345678', password_confirmation: '12345678')
+user = User.create!(email: 'admin@bfr.com', password: '12345678', password_confirmation: '12345678', admin: true)
 Rocket.create!(name: 'Big Fucking Rocket', user: user, image_url: 'https://media.giphy.com/media/HtaGVNHVnTNuw/giphy.gif')
 
 iron = Resource.create!(name: 'Iron', regen_time: 50)
