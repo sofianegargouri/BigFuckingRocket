@@ -57,26 +57,10 @@ body {
   }
 }
 
-#upgrade-btn-hollow-pressure-vessel {
-  left: 55vw;
+svg {
+  height: 20rem;
+  left: calc(50vw - 10rem);
   position: fixed;
-  top: 60vh;
-}
-
-#upgrade-btn-nose {
-  left: 38vw;
-  position: fixed;
-  top: 17vh;
-}
-
-#upgrade-btn-tube {
-  left: 45vw;
-  position: fixed;
-  top: 35vh;
-}
-
-#upgrade-btn-fins {
-  left: 45vw;
-  position: fixed;
-  top: 70vh;
+  top: calc(50vh - 10rem);
+  width: 20rem;
 }
