@@ -28,7 +28,9 @@
   - @rocket.rocket_parts.each do |rocket_part|
     %div{id: "upgrade-panel-#{rocket_part.part.name.downcase.gsub(" ", "-")}", class:'upgrade-panel'}
       .panel-header
-        .title="#{rocket_part.part.name}"
+        .title="#{rocket_part.part.name} - Level #{rocket_part.level}"
+        .panel-dismiss
+          %i{class:"far fa-times-circle"}
       .panel-content
         .stat-block
           - @stats.each do |stat|
@@ -46,6 +48,5 @@
                 = PartCost.find_by(part: rocket_part.part, resource: resource).cost
       .panel-footer
         - if can? :level_up, rocket_part
-          .part-upgrade-button
-            = link_to 'Upgrade', level_up_rocket_part_path(rocket_part), method: :patch
+          %button{id: "#{rocket_part.id}", class: "part-upgrade-button"}="Upgrade"
   = render "shared/footer", resources: @resources, rocket: @rocket

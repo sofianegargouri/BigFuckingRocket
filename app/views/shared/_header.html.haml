@@ -9,3 +9,4 @@
   .auth
     %button{class: 'sign-out-btn'}
       %i{class:"fas fa-power-off"}
+        = link_to 'Sign out', destroy_user_session_path(), method: :delete

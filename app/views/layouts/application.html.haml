@@ -4,6 +4,7 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %link{href: "https://fonts.googleapis.com/css?family=Bangers", rel: "stylesheet"}
     %link{href: "https://use.fontawesome.com/releases/v5.0.13/css/all.css", rel: "stylesheet", integrity: "DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp", crossorigin:"anonymous"}
+    %link{href: "https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.22.0/sweetalert2.min.css", rel: "stylesheet"}
     %title BigFuckingRocket
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -12,4 +13,4 @@
     = yield
     %p.notice= notice
     %p.alert= alert
-    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js'}
+    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.22.0/sweetalert2.min.js'}

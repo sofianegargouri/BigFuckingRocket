@@ -14,4 +14,37 @@ $(document).ready(function() {
       top: position.top + $(this)[0].getBoundingClientRect().height,
     })
   })
+
+  $('.part-upgrade-button').on('click', function() {
+    //= link_to 'Upgrade', level_up_rocket_part_path(rocket_part), method: :patch
+    $.ajax({
+      method: "PATCH",
+      url: "/rocket_parts/"+$(this).attr('id')+"/level_up"
+    }).done(function() {
+      $.event.trigger({
+        type: "upgrade",
+        message: "Your rocket has been upgraded !",
+        time: new Date()
+      });
+    });
+  })
+
+  $(document).on("upgrade", function(e) {
+    console.log(e)
+    swal({
+      title: e.message,
+      width: 600,
+      padding: '3em',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("https://media.giphy.com/media/xUOwGcpl1R1yeqo9YQ/giphy.gif")
+        center left
+        no-repeat
+      `
+    })
+  });
+
+  $('.panel-dismiss').on('click', function() {
+    $(this).parent().parent().hide()
+  })
 })

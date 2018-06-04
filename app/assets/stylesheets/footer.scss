@@ -16,8 +16,9 @@
     img {
       bottom: 0;
       box-shadow: 0 0 1rem rgba(0, 0, 0, .3);
-      position: absolute;
       height: 10rem;
+      object-fit: cover;
+      position: absolute;
       transition: all .3s ease;
       right: 0;
       width: 10rem;
