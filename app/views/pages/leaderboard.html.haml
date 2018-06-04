@@ -1,0 +1,11 @@
+= render "shared/header", resources: @resources, rocket: @rocket
+
+.leaderboard
+  - @rockets.each do |rocket|
+    .rocket
+      %img{src: rocket.image_url}
+      %h2=rocket.name
+      %h3
+        =rocket.max_distance
+        miles
+= render "shared/footer", resources: @resources, rocket: @rocket

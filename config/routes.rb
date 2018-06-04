@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   get 'dashboard' => 'pages#dashboard'
+  get 'leaderboard' => 'pages#leaderboard'
   resources :rocket_parts, only: [] do
     patch :level_up, on: :member
   end

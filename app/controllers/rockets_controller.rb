@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class RocketsController < ApplicationController
+  before_action :authenticate_user!
   load_and_authorize_resource
 
   # GET /rockets/1

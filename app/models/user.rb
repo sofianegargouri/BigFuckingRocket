@@ -3,13 +3,11 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable,
-         :recoverable, :rememberable, :validatable
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # devise :database_authenticatable,
+  #        :recoverable, :rememberable, :validatable
   after_commit :create_resources
   devise :database_authenticatable,
-         :recoverable, :rememberable, :trackable
+         :recoverable, :rememberable, :trackable, :registerable
 
   has_one :rocket, dependent: :destroy
   has_many :user_resources, dependent: :destroy
@@ -22,6 +20,7 @@ class User < ApplicationRecord
         ) * user_resource.resource.regen_time
       )
     end
+    rocket&.update(max_distance: rocket&.total_distance)
   end
 
   private
