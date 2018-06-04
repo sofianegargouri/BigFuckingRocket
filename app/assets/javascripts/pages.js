@@ -17,7 +17,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
   }
 };
 
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   if(getUrlParameter('upgrade') == 'success') {
     swal({
       title: "Your rocket has been successfully upgraded !",
