@@ -4,6 +4,7 @@ class Part < ApplicationRecord
   after_commit :create_rocket_parts
 
   has_many :part_costs, dependent: :destroy
+  has_many :part_stats, dependent: :destroy
   has_many :resources, through: :part_costs
 
   private
