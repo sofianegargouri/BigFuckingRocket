@@ -37,8 +37,6 @@ gem 'cancancan', '~> 2.0'
 gem 'devise', git: 'https://github.com/plataformatec/devise'
 gem 'haml-rails', '~> 1.0'
 gem 'jquery-rails'
-gem 'sweet-alert'
-gem 'sweet-alert-confirm'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

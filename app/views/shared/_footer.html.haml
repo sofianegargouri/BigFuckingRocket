@@ -1,5 +1,14 @@
 .footer
   .rocket-infos
-    %img{src: "#{rocket.image_url}"}/
+    - if rocket.total_distance < 100
+      %img{src: "https://media.giphy.com/media/3o85xxSZvFZgD4wXde/giphy.gif"}
+    - elsif rocket.total_distance < 200
+      %img{src: "https://media.giphy.com/media/Y8yy0d2LSYuNa/giphy.gif"}
+    - elsif rocket.total_distance < 500
+      %img{src: "https://media.giphy.com/media/Ij5eec1luJQFG/giphy.gif"}
+    - elsif rocket.total_distance < 1000
+      %img{src: "https://media.giphy.com/media/l4KhQo2MESJkc6QbS/giphy.gif"}
+    - else
+      %img{src: "https://media.giphy.com/media/Qv7y2Tl4ki7Ru/giphy.gif"}
     %h1= rocket.name
     %h2= "Distance: #{rocket.total_distance} miles"
