@@ -26,10 +26,32 @@
     }
   }
 
+  .live {
+    align-items: center;
+    bottom: 9rem;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    right: 2rem;
+    transition: all .3s ease;
+
+    .badge {
+      background: red;
+      border-radius: .3rem;
+      height: .6rem;
+      margin-right: .4rem;
+      width: .6rem;
+    }
+  }
+
   &:hover {
     img {
       height: 20rem;
       width: 20rem;
+    }
+
+    .live {
+      bottom: 19rem;
     }
   }
 }
