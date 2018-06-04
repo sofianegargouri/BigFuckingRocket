@@ -48,5 +48,6 @@
                 = PartCost.find_by(part: rocket_part.part, resource: resource).cost
       .panel-footer
         - if can? :level_up, rocket_part
-          %button{id: "#{rocket_part.id}", class: "part-upgrade-button"}="Upgrade"
+          %button.part-upgrade-button
+            = link_to 'Upgrade', level_up_rocket_part_path(rocket_part), method: :patch
   = render "shared/footer", resources: @resources, rocket: @rocket
