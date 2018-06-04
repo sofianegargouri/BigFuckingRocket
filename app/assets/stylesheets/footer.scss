@@ -1,0 +1,23 @@
+.footer {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  background-color: white;
+  height: 8rem;
+  width: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0.9;
+  border-radius: 15px;
+
+  .rocket-infos {
+    text-align: center;
+
+    img {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+}

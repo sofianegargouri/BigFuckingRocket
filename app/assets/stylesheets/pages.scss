@@ -1,3 +1,58 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  margin:0;
+  padding:0;
+  background: url("/images/rocket-in-space.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.content {
+  .upgrade-btn {
+    color: #116cff;
+    background-color: transparent;
+    border: none;
+  }
+
+  .upgrade-panel {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 12rem;
+    width: 10rem;
+    background-color: white;
+
+    .panel-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .stat-block{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+
+        .stat{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+
+      .cost-block{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: center;
+      }
+    }
+
+    .panel-footer {
+      align-items: flex-end;
+    }
+  }
+}

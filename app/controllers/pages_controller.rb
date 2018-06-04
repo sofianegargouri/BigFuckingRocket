@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @resources = Resource.all
+    @stats = Stat.all
     if current_user.rocket.nil?
       redirect_to new_rocket_path
     else

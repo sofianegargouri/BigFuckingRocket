@@ -1,0 +1,11 @@
+.header
+  .ressources
+    - resources.each do |resource|
+      %div{class: "ressource ressource-#{resource.name.downcase}"}
+        .icon
+          %img{alt: "#{resource.name}", class: "ressource-icon", src: "/images/ressources/#{resource.name}.png", :title => "#{resource.name}"}/
+        .value
+          = rocket.user_resources.find_by(resource: resource).quantity
+  .auth
+    %button{class: 'sign-out-btn'}
+      %i{class:"fas fa-power-off"}

@@ -1,3 +1,30 @@
-= render "shared/sidebar", resources: @resources, rocket: @rocket
+= render "shared/header", resources: @resources, rocket: @rocket
 .content
-  %div
+  - @rocket.parts.each do |part|
+    %button{id: "upgrade-btn-#{part.name.downcase.gsub(" ", "-")}", class:'upgrade-btn', link_to: "my link"}
+      %i{class:'fas fa-3x fa-plus-circle'}
+  - @rocket.rocket_parts.each do |rocket_part|
+    %div{id: "upgrade-panel-#{rocket_part.part.name.downcase.gsub(" ", "-")}", class:'upgrade-panel'}
+      .panel-header
+        .title="#{rocket_part.part.name}"
+      .panel-content
+        .stat-block
+          - @stats.each do |stat|
+            %div{class: "stat stat-#{stat.name.downcase}"}
+              .name
+                = stat.name
+              .value
+                = "#{PartStat.find_by(stat: stat, part: rocket_part.part).ratio}%"
+
+        .cost-block
+          - @resources.each do |resource|
+            %div{class: "part-upgrade part-upgrade-#{resource.name.downcase}"}
+              .icon
+                %img{alt: "#{resource.name}", class: "ressource-icon", :src => "/images/ressources/#{resource.name}.png", :title => "#{resource.name}"}/
+              .cost
+                = PartCost.find_by(part: rocket_part.part, resource: resource).cost
+      .panel-footer
+        - if can? :level_up, rocket_part
+          .part-upgrade-button
+            = link_to 'Upgrade', level_up_rocket_part_path(rocket_part), method: :patch
+  = render "shared/footer", resources: @resources, rocket: @rocket
