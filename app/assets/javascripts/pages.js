@@ -23,12 +23,7 @@ $(document).ready(function() {
       title: "Your rocket has been successfully upgraded !",
       width: 600,
       padding: '3em',
-      backdrop: `
-        rgba(0,0,123,0.4)
-        url("https://media.giphy.com/media/xUOwGcpl1R1yeqo9YQ/giphy.gif")
-        center top
-        no-repeat
-      `
+      backdrop: 'rgba(0,0,123,0.4) url("https://media.giphy.com/media/xUOwGcpl1R1yeqo9YQ/giphy.gif") center top no-repeat'
     })
   }
 
