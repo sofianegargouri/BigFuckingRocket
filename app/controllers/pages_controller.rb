@@ -10,8 +10,8 @@ class PagesController < ApplicationController
     @rockets = Rocket.order(max_distance: :desc)
   end
 
-
   private
+
   def set_constants
     @resources = Resource.all
     @stats = Stat.all
