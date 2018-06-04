@@ -7,6 +7,8 @@ class RocketPart < ApplicationRecord
   has_one :user, through: :rocket
   has_many :user_resources, through: :user
 
+  validates :part_id, uniqueness: {scope: :rocket_id}
+
   def level_up
     update(level: level + 1)
     part_costs.each do |part_cost|
